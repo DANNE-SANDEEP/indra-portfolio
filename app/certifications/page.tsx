@@ -42,8 +42,21 @@ export default function Certifications() {
   
   ];
 
+  // Define the certificate type
+  interface Certificate {
+    id: number;
+    title: string;
+    issuer: string;
+    logo: string;
+    image: string;
+    date: string;
+    skills: string[];
+    color: string;
+    url: string;
+  }
+
   // Certificate card component
-  const CertificateCard = ({ certificate }) => {
+  const CertificateCard = ({ certificate }: { certificate: Certificate }) => {
     return (
       <div className="bg-transparent shadow-md relative overflow-hidden transition-all duration-300 hover:shadow-xl backdrop-blur-md border border-black animate-[fadeIn_0.8s_ease-in]">
         {/* Colored border on the left side */}
