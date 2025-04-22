@@ -1,9 +1,22 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import Particles from "../components/TechParticlesBackground";
 import { SiGithub } from "react-icons/si";
 import { FiSearch, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
+
+// Define interface for project structure
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  type: string;
+  color: string;
+  github: string;
+  image: string;
+}
 
 export default function Projects() {
   const [navbarHeight, setNavbarHeight] = useState(80);
@@ -20,7 +33,7 @@ export default function Projects() {
     }
   }, []);
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "Sign Language Recognition System",
@@ -55,7 +68,7 @@ export default function Projects() {
   ];
 
   // Get unique project types for the filter dropdown
-  const projectTypes = ["all", ...new Set(projects.map(project => project.type))];
+  const projectTypes: string[] = ["all", ...Array.from(new Set(projects.map(project => project.type)))];
 
   // Filter projects based on search term and project type
   const filteredProjects = projects.filter(project => {
@@ -70,7 +83,7 @@ export default function Projects() {
   });
 
   // Project card component without hover animation
-  const ProjectCard = ({ project }) => {
+  const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
     return (
       <div 
         className="bg-transparent shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-xl backdrop-blur-md border border-black animate-[fadeIn_0.8s_ease-in]"
