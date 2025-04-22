@@ -184,7 +184,7 @@ export default function TechParticlesBackground() {
       }
 
       function connect() {
-        const connectionDistance = (canvas.width / 8) * (canvas.height / 8);
+        const connectionDistance = canvas ? (canvas.width / 8) * (canvas.height / 8) : 0;
 
         for (let a = 0; a < particlesArray.length; a++) {
           for (let b = a; b < particlesArray.length; b++) {
