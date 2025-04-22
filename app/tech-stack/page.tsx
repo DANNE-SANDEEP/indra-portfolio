@@ -3,6 +3,27 @@ import { useState, useEffect } from "react";
 import Particles from "../components/TechParticlesBackground";
 import { FiCode, FiDatabase, FiLayers, FiCpu, FiBox } from "react-icons/fi";
 
+// Define TypeScript interfaces for our data structures
+interface Technology {
+  name: string;
+  icon: string;
+}
+
+interface Category {
+  name: string;
+  icon: React.ReactNode;
+  technologies: Technology[];
+}
+
+// Props interfaces for our components
+interface SectionCardProps {
+  category: Category;
+}
+
+interface TechCardProps {
+  tech: Technology;
+}
+
 export default function TechStack() {
   const [navbarHeight, setNavbarHeight] = useState(80);
 
@@ -16,7 +37,7 @@ export default function TechStack() {
   }, []);
 
   // Tech stack categories
-  const categories = [
+  const categories: Category[] = [
     {
       name: "Programming Languages",
       icon: <FiCode />,
@@ -70,7 +91,7 @@ export default function TechStack() {
   ];
 
   // Section Card component
-  const SectionCard = ({ category }) => {
+  const SectionCard = ({ category }: SectionCardProps) => {
     return (
       <div className="bg-transparent shadow-md relative overflow-hidden transition-all duration-300 hover:shadow-xl backdrop-blur-md border border-black mb-8 animate-[fadeIn_0.8s_ease-in]">
         {/* Colored border on the left side */}
@@ -97,7 +118,7 @@ export default function TechStack() {
   };
   
   // Tech Card component - redesigned without progress bars
-  const TechCard = ({ tech }) => {
+  const TechCard = ({ tech }: TechCardProps) => {
     return (
       <div className="group">
         <div className="flex flex-col items-center p-4 bg-white/50 backdrop-blur-sm rounded-lg border border-transparent hover:border-black shadow-sm hover:shadow-md transition-all duration-300">
