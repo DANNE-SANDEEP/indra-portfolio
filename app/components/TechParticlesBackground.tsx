@@ -37,8 +37,10 @@ export default function TechParticlesBackground() {
       { name: 'TypeScript', img: '/icons/typescript.png' }
     ];
 
+    type LoadedIcon = { name: string; img: string; image: HTMLImageElement | null };
+
     const imagePromises = techIcons.map(icon => {
-      return new Promise((resolve) => {
+      return new Promise<LoadedIcon>((resolve) => {
         const img = new Image();
         img.onload = () => resolve({ ...icon, image: img });
         img.onerror = () => resolve({ ...icon, image: null });
@@ -46,8 +48,8 @@ export default function TechParticlesBackground() {
       });
     });
 
-    Promise.all(imagePromises).then(loadedIcons => {
-      const filteredIcons = loadedIcons.filter(icon => icon.image !== null);
+    Promise.all(imagePromises).then((loadedIcons: LoadedIcon[]) => {
+      const filteredIcons = loadedIcons.filter((icon) => icon.image !== null) as LoadedIcon[];
       setIsImagesLoaded(true);
       initAnimation(filteredIcons);
     });
