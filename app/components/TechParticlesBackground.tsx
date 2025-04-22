@@ -143,8 +143,8 @@ export default function TechParticlesBackground() {
         color: string;
 
         constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
+          this.x = Math.random() * (canvas?.width || 0);
+          this.y = Math.random() * (canvas?.height || 0);
           this.size = Math.random() * 1.5 + 0.5;
           this.speedX = Math.random() * 0.8 - 0.4;
           this.speedY = Math.random() * 0.8 - 0.4;
