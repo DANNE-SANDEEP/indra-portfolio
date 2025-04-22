@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function TechParticlesBackground() {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isImagesLoaded, setIsImagesLoaded] = useState(false);
 
   useEffect(() => {
