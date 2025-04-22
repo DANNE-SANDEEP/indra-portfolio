@@ -59,6 +59,18 @@ export default function TechParticlesBackground() {
       const numberOfParticles = Math.min(60, Math.floor(window.innerWidth * window.innerHeight / 15000));
 
       class TechParticle {
+        x: number;
+        y: number;
+        size: number;
+        speedX: number;
+        speedY: number;
+        tech: LoadedIcon;
+        opacity: number;
+        rotation: number;
+        rotationSpeed: number;
+        pulse: number;
+        pulseSpeed: number;
+
         constructor() {
           this.x = Math.random() * canvas.width;
           this.y = Math.random() * canvas.height;
