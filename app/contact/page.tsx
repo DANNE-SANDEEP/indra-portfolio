@@ -81,8 +81,16 @@ export default function Contact() {
     }
   ];
 
+  // Define the type for contact info
+  interface ContactInfo {
+    icon: JSX.Element;
+    label: string;
+    value: string;
+    link: string;
+  }
+
   // Contact Info Card Component
-  const ContactInfoCard = ({ info }) => {
+  const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
     return (
       <a 
         href={info.link} 
