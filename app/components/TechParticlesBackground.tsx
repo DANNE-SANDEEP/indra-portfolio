@@ -113,7 +113,7 @@ export default function TechParticlesBackground() {
         }
 
         draw() {
-          if (!this.tech?.image) return;
+          if (!this.tech?.image || !ctx) return;
 
           ctx.save();
           ctx.translate(this.x, this.y);
