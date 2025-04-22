@@ -33,7 +33,14 @@ export default function About() {
   }, []);
 
   // Grid item component with hover effect that fills div with black and centers heading
-  const GridItem = ({ title, link, className, children }) => {
+  interface GridItemProps {
+    title: string;
+    link?: string;
+    className?: string;
+    children?: React.ReactNode;
+  }
+
+  const GridItem: React.FC<GridItemProps> = ({ title, link, className, children }) => {
     return (
       <Link
         href={link || "#"}
