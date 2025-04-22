@@ -208,11 +208,13 @@ export default function TechParticlesBackground() {
       }
 
       function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particlesArray.forEach(p => {
-          p.update();
-          p.draw();
-        });
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particlesArray.forEach(p => {
+            p.update();
+            p.draw();
+          });
+        }
         connect();
         animationFrameId = requestAnimationFrame(animate);
       }
