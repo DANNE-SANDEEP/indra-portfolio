@@ -10,7 +10,7 @@ export default function TechParticlesBackground() {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    let animationFrameId;
+    let animationFrameId: number | undefined;
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
