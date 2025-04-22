@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Particles from "../components/TechParticlesBackground";
 import { FiMail, FiPhone, FiLinkedin, FiGithub, FiSend } from "react-icons/fi";
+import React from "react";
 
 export default function Contact() {
   const [navbarHeight, setNavbarHeight] = useState(80);
@@ -80,7 +81,7 @@ export default function Contact() {
       link: "https://github.com/bejjipuram"
     }
   ];
-
+  // Ensure the JSX namespace is imported
   // Define the type for contact info
   interface ContactInfo {
     icon: JSX.Element;
