@@ -23,7 +23,7 @@ export default function Contact() {
     }
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState((prev) => ({
       ...prev,
