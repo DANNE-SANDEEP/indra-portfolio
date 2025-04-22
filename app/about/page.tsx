@@ -86,9 +86,10 @@ export default function About() {
                   src="/profile.jpg"
                   alt="Sandeep Danne"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/300?text=SD";
+                  onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = "https://via.placeholder.com/300?text=SD";
                   }}
                 />
               </div>
