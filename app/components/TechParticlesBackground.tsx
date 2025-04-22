@@ -135,6 +135,13 @@ export default function TechParticlesBackground() {
       }
 
       class ConnectingParticle {
+        x: number;
+        y: number;
+        size: number;
+        speedX: number;
+        speedY: number;
+        color: string;
+
         constructor() {
           this.x = Math.random() * canvas.width;
           this.y = Math.random() * canvas.height;
