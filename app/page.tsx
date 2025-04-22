@@ -58,8 +58,9 @@ export default function Home() {
               alt="Sandeep Danne"
               className="w-full h-full object-cover"
               onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "https://via.placeholder.com/300?text=SD"; // Fallback image
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.src = "https://via.placeholder.com/300?text=SD"; // Fallback image
               }}
             />
           </div>
