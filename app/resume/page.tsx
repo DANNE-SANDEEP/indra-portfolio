@@ -1,8 +1,34 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import Particles from "../components/TechParticlesBackground";
 import { FiDownload, FiBookOpen, FiAward, FiCode } from "react-icons/fi";
 import Image from "next/image";
+
+// Define interfaces for data structures
+interface Education {
+  institution: string;
+  degree: string;
+  duration: string;
+  location: string;
+  grade: string;
+  logo: string;
+}
+
+interface Training {
+  title: string;
+  organization: string;
+  duration: string;
+  points: string[];
+  logo: string;
+}
+
+interface DownloadOption {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  file: string;
+}
 
 export default function Resume() {
   const [navbarHeight, setNavbarHeight] = useState(80);
@@ -16,7 +42,7 @@ export default function Resume() {
     }
   }, []);
 
-  const education = [
+  const education: Education[] = [
     {
       institution: "Lovely Professional University",
       degree: "Computer Science and Engineering",
@@ -43,7 +69,7 @@ export default function Resume() {
     }
   ];
 
-  const trainings = [
+  const trainings: Training[] = [
     {
       title: "DSA using C++ Training",
       organization: "BoardInfinity",
@@ -58,7 +84,7 @@ export default function Resume() {
     }
   ];
 
-  const downloadOptions = [
+  const downloadOptions: DownloadOption[] = [
     {
       title: "General CV",
       description: "Complete professional profile with all skills and experiences",
@@ -80,7 +106,13 @@ export default function Resume() {
   ];
 
   // Card component for sections
-  const SectionCard = ({ title, children, icon }) => {
+  interface SectionCardProps {
+    title: string;
+    children: React.ReactNode;
+    icon: React.ReactNode;
+  }
+
+  const SectionCard: React.FC<SectionCardProps> = ({ title, children, icon }) => {
     return (
       <div className="bg-transparent shadow-md relative overflow-hidden transition-all duration-300 hover:shadow-xl backdrop-blur-md border border-black mb-8 animate-[fadeIn_0.8s_ease-in]">
         {/* Colored border on the left side */}
@@ -103,7 +135,11 @@ export default function Resume() {
   };
 
   // Education item component with logo
-  const EducationItem = ({ education }) => {
+  interface EducationItemProps {
+    education: Education;
+  }
+
+  const EducationItem: React.FC<EducationItemProps> = ({ education }) => {
     return (
       <div className="mb-6 last:mb-0 pl-4">
         <div className="flex items-start mb-2">
@@ -136,7 +172,11 @@ export default function Resume() {
   };
 
   // Training item component with logo
-  const TrainingItem = ({ training }) => {
+  interface TrainingItemProps {
+    training: Training;
+  }
+
+  const TrainingItem: React.FC<TrainingItemProps> = ({ training }) => {
     return (
       <div className="mb-6 last:mb-0 pl-4">
         <div className="flex items-start mb-2">
@@ -170,7 +210,11 @@ export default function Resume() {
   };
 
   // Download card component
-  const DownloadCard = ({ option }) => {
+  interface DownloadCardProps {
+    option: DownloadOption;
+  }
+
+  const DownloadCard: React.FC<DownloadCardProps> = ({ option }) => {
     return (
       <a 
         href={option.file} 
