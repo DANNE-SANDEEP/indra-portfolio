@@ -67,7 +67,9 @@ export default function About() {
       style={{ paddingTop: `${navbarHeight}px` }}
       className="relative min-h-screen w-full"
     >
-      <Particles className="opacity-30" />
+      <div className="opacity-30">
+        <Particles />
+      </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Grid Layout matching the sketch and new reference image */}
