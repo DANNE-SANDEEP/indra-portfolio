@@ -194,12 +194,14 @@ export default function TechParticlesBackground() {
 
             if (distance < connectionDistance) {
               const opacity = 0.3 * (1 - distance / connectionDistance);
-              ctx.strokeStyle = `rgba(80, 80, 100, ${opacity})`;
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-              ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-              ctx.stroke();
+              if (ctx) {
+                ctx.strokeStyle = `rgba(80, 80, 100, ${opacity})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+              }
             }
           }
         }
