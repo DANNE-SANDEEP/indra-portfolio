@@ -54,7 +54,7 @@ export default function TechParticlesBackground() {
       initAnimation(filteredIcons);
     });
 
-    function initAnimation(loadedIcons) {
+    function initAnimation(loadedIcons: LoadedIcon[]) {
       const particlesArray = [];
       const numberOfParticles = Math.min(60, Math.floor(window.innerWidth * window.innerHeight / 15000));
 
