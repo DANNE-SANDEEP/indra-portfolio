@@ -1,8 +1,8 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import Particles from "../components/TechParticlesBackground";
 import { FiMail, FiPhone, FiLinkedin, FiGithub, FiSend } from "react-icons/fi";
-import React from "react";
 
 export default function Contact() {
   const [navbarHeight, setNavbarHeight] = useState(80);
@@ -55,7 +55,15 @@ export default function Contact() {
     }
   };
 
-  const contactInfo = [
+  // Define the type for contact info
+  interface ContactInfo {
+    icon: React.ReactNode;
+    label: string;
+    value: string;
+    link: string;
+  }
+
+  const contactInfo: ContactInfo[] = [
     {
       icon: <FiMail />,
       label: "Email",
@@ -72,7 +80,7 @@ export default function Contact() {
       icon: <FiLinkedin />,
       label: "LinkedIn",
       value: "linkedin.com/in/bejjipuram",
-      link: "www.linkedin.com/in/bejjipuram"
+      link: "https://www.linkedin.com/in/bejjipuram"
     },
     {
       icon: <FiGithub />,
@@ -81,14 +89,6 @@ export default function Contact() {
       link: "https://github.com/bejjipuram"
     }
   ];
-  // Ensure the JSX namespace is imported
-  // Define the type for contact info
-  interface ContactInfo {
-    icon: JSX.Element;
-    label: string;
-    value: string;
-    link: string;
-  }
 
   // Contact Info Card Component
   const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
@@ -200,7 +200,7 @@ export default function Contact() {
                       name="message"
                       value={formState.message}
                       onChange={handleChange}
-                      rows="5"
+                      rows={5}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-black/50"
                       required
                     ></textarea>
