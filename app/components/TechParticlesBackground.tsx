@@ -209,7 +209,9 @@ export default function TechParticlesBackground() {
 
       function animate() {
         if (ctx) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          if (canvas) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
           particlesArray.forEach(p => {
             p.update();
             p.draw();
