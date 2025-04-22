@@ -92,21 +92,23 @@ export default function TechParticlesBackground() {
           this.pulse += this.pulseSpeed;
           if (this.pulse > Math.PI * 2) this.pulse = 0;
 
-          if (this.x > canvas.width - this.size / 2) {
-            this.x = canvas.width - this.size / 2;
-            this.speedX *= -1;
-          }
-          if (this.x < this.size / 2) {
-            this.x = this.size / 2;
-            this.speedX *= -1;
-          }
-          if (this.y > canvas.height - this.size / 2) {
-            this.y = canvas.height - this.size / 2;
-            this.speedY *= -1;
-          }
-          if (this.y < this.size / 2) {
-            this.y = this.size / 2;
-            this.speedY *= -1;
+          if (canvas) {
+            if (this.x > canvas.width - this.size / 2) {
+              this.x = canvas.width - this.size / 2;
+              this.speedX *= -1;
+            }
+            if (this.x < this.size / 2) {
+              this.x = this.size / 2;
+              this.speedX *= -1;
+            }
+            if (this.y > canvas.height - this.size / 2) {
+              this.y = canvas.height - this.size / 2;
+              this.speedY *= -1;
+            }
+            if (this.y < this.size / 2) {
+              this.y = this.size / 2;
+              this.speedY *= -1;
+            }
           }
         }
 
