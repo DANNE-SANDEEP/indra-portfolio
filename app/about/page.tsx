@@ -123,7 +123,7 @@ export default function About() {
                   icon: (
                     <SiCss3 className="text-blue-600 text-2xl md:text-3xl" />
                   ),
-                  position: "top-32 left-24",
+                  position: "top-32 left-18",
                   animation: "animate-float-2",
                   bubbleColor: "bg-blue-50",
                 },
@@ -132,7 +132,7 @@ export default function About() {
                   icon: (
                     <SiReact className="text-cyan-500 text-2xl md:text-3xl" />
                   ),
-                  position: "top-16 left-48",
+                  position: "top-8 left-48",
                   animation: "animate-float-3",
                   bubbleColor: "bg-cyan-50",
                 },
@@ -160,7 +160,7 @@ export default function About() {
                     <SiNodedotjs className="text-green-600 text-2xl md:text-3xl" />
                   ),
                   position: "top-24 left-60",
-                  animation: "animate-float-3",
+                  animation: "animate-float-4",
                   bubbleColor: "bg-green-50",
                 },
                 {
@@ -168,7 +168,7 @@ export default function About() {
                   icon: (
                     <SiPython className="text-yellow-500 text-2xl md:text-3xl" />
                   ),
-                  position: "top-8 left-32",
+                  position: "top-8 left-28",
                   animation: "animate-float-5",
                   bubbleColor: "bg-yellow-50",
                 },
@@ -195,8 +195,8 @@ export default function About() {
                   icon: (
                     <SiSalesforce className="text-sky-400 text-2xl md:text-3xl" />
                   ),
-                  position: "top-10 left-153",
-                  animation: "animate-float-3",
+                  position: "top-10 left-163",
+                  animation: "animate-float-4",
                   bubbleColor: "bg-sky-50",
                 },
                 {
@@ -204,8 +204,8 @@ export default function About() {
                   icon: (
                     <FaMicrosoft className="text-blue-600 text-2xl md:text-3xl" />
                   ),
-                  position: "top-16 left-90",
-                  animation: "animate-float-3",
+                  position: "top-8 left-98",
+                  animation: "animate-float-2",
                   bubbleColor: "bg-blue-100",
                 },
                 {
@@ -240,8 +240,8 @@ export default function About() {
                   icon: (
                     <SiMysql className="text-blue-600 text-2xl md:text-3xl" />
                   ),
-                  position: "top-25 left-100",
-                  animation: "animate-float-3",
+                  position: "top-36 left-100",
+                  animation: "animate-float-4",
                   bubbleColor: "bg-blue-100",
                 },
                 
